@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Medicinas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>My file</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @medicinas.each do |medicina| %>
+      <tr>
+        <td><a href="<%= medicina.my_file %>">Download</a></td>
+        <td><%= link_to 'Show', medicina %></td>
+        <td><%= link_to 'Edit', edit_medicina_path(medicina) %></td>
+        <td><%= link_to 'Destroy', medicina, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Medicina', new_medicina_path %>
